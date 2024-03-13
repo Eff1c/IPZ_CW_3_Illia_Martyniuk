@@ -39,12 +39,13 @@ fun MainScreen(modifier: Modifier = Modifier) {
             .fillMaxSize()
             .background(Color.White)
     ) {
-
+        Text(
+            text = "30 day of wellness",
+            modifier = modifier.fillMaxSize(),
+            textAlign = TextAlign.Center,
+            style = TextStyle(fontSize = 30.sp, color = Color.Black)
+        )
     }
-    Text(
-        text = "30 day of wellness",
-        modifier = modifier, style = TextStyle(fontSize = 32.sp, color = Color.Black)
-    )
 }
 
 @Preview(showBackground = true)
