@@ -1,28 +1,31 @@
-package ua.edu.lntu.ipz_cw
+package com.example.ipz_cw_3
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import ua.edu.lntu.ipz_cw.ui.theme.IPZ_CW_3_Illia_MartyniukTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
             IPZ_CW_3_Illia_MartyniukTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    MainScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -30,17 +33,22 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun MainScreen(modifier: Modifier = Modifier) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White)
+    ) {
+
+    }
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        text = "30 day of wellness",
+        modifier = modifier, style = TextStyle(fontSize = 32.sp, color = Color.Black)
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    IPZ_CW_3_Illia_MartyniukTheme {
-        Greeting("Android")
-    }
+fun MainScreenPreview() {
+    IPZ_CW_3_Illia_MartyniukTheme { MainScreen() }
 }
