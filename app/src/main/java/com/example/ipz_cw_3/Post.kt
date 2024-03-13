@@ -1,4 +1,5 @@
 package com.example.ipz_cw_3
+import ua.edu.lntu.ipz_cw.R
 
 class Post(val day: Int, val title: String = "Title $day", val description: String = "This is description $day.") {
     val randomImageRes = listOf(
